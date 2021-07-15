@@ -1,0 +1,122 @@
+.home h1
+    color: #ffffff
+    font-family: comicSans
+.about-me 
+    text-align: center
+    .first-intro-part, .my-gallery
+        display: inline-block
+        vertical-align: middle
+        max-width: 450px
+.my-gallery 
+    padding: 10px
+    .image-container
+        display: inline-block
+        position: relative
+        background: #ffffff
+        width: 40%
+        overflow: hidden
+        margin: 10px
+        vertical-align: top
+    .inner-image
+        width: 100%
+    .frame-image
+        position: absolute
+        z-index: 1
+    .image-container:after
+        content: ""
+        display: inline-block
+        background-image: url("../images/old-school-frame.png")
+        background-size: 100% 100%
+        background-position: center
+        background-repeat: no-repeat
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        position: absolute
+        width: 100%
+.new:after
+        content: ""
+        display: inline-block
+        background-image: url("../gifs/new.gif")
+        background-repeat: no-repeat
+        top: 0
+        bottom: 0
+        right: 0
+        position: absolute
+        width: 100%
+
+.other-info-wrapper
+    text-align: center
+    .list-wall
+        background: url("../gifs/stars.gif") !important
+        li
+            font-family: comicSans
+            list-style: none
+            font-size: 20px
+    .alert, .list-wall
+        display: inline-block
+        background: #d300d4
+        padding: 20px
+        width: 45%
+        min-width: 350px
+        margin: 20px 0px 20px 0px
+        vertical-align: middle
+        h2, a
+            font-family: comicSans
+        .alert-title, img
+            display: inline-block
+            vertical-align: middle
+            font-size: 50px
+        a
+            background: black
+            padding: 10px
+            color: yellow
+
+.chooseYourFighter
+    h2
+        text-align: center
+        font-size: 3em
+        padding: 25px
+    .fighters
+        background: url("../gifs/stars.gif")
+        padding: 20px
+        margin: 20px 0px 20px 0px
+        position: relative
+    a
+        display: inline-block
+        height: 100%
+        width: 100%
+.the-wall
+    background: url("../images/90-pattern.jpeg")
+    background-position: center
+    background-size: contain
+    padding: 25px
+    .youGotMail
+        position: absolute
+        text-align: right
+        vertical-align: middle
+        width: 10%
+        display: inline-block
+    form
+        width: 100%
+        max-width: 350px
+    input, textarea
+        display: block
+        background-color: #000
+        border: 1px solid #0f0
+        color: #0f0
+        margin: 20px 0px 20px 0px
+    textarea
+        width: 100%
+        max-width: 500px
+        height: 150px
+    .btn
+        margin-top: 20px
+    h2
+        font-size: 3em
+
+//desktop
+@media screen and (min-width: 800px)
+    .alert, .list-wall
+        margin: 10px !important
