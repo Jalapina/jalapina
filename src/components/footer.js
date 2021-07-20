@@ -19,7 +19,7 @@ const Footer = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-        footer Jalapina
+        Sample Text
         </Link>
       </h1>
     </div>

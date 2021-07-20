@@ -11,7 +11,7 @@ html {
 }
 body {
   margin: 0;
-  background: #000000;  
+  background: url("../images/space.png");  
   color: #ffffff;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -515,7 +515,7 @@ th {
   font-weight: bold;
 }
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(2.45rem / 2);
 }
 ol li {
   padding-left: 0;

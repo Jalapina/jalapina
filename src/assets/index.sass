@@ -1,12 +1,20 @@
 .home h1
     color: #ffffff
     font-family: comicSans
+.sliding-text
+    font-family: monospace
+    font-size: 20px
 .about-me 
     text-align: center
+    margin: 20px 0px 20px 0px
+    .text-wrapper
+        margin: 15% 0px 15% 0px
     .first-intro-part, .my-gallery
         display: inline-block
         vertical-align: middle
         max-width: 450px
+    img 
+        padding-top: 10%
 .my-gallery 
     padding: 10px
     .image-container
@@ -48,16 +56,21 @@
 
 .other-info-wrapper
     text-align: center
+    margin: 45px 0px 45px 0px
     .list-wall
         background: url("../gifs/stars.gif") !important
+        ul
+            padding-top: 15px            
         li
             font-family: comicSans
             list-style: none
             font-size: 20px
+    .alert
+        border: 1px solid #d300d4
+        p
+            font-family: monospace
     .alert, .list-wall
         display: inline-block
-        background: #d300d4
-        padding: 20px
         width: 45%
         min-width: 350px
         margin: 20px 0px 20px 0px
@@ -91,7 +104,8 @@
     background: url("../images/90-pattern.jpeg")
     background-position: center
     background-size: contain
-    padding: 25px
+    padding: 25px    
+    margin: 55px 0px 55px 0px
     .youGotMail
         position: absolute
         text-align: right
@@ -120,3 +134,13 @@
 @media screen and (min-width: 800px)
     .alert, .list-wall
         margin: 10px !important
+.my-spotify
+    text-align: center  
+    margin: 20px 0px 20px 0px
+    background: #ad5389
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389)
+    background: linear-gradient(to right, #3c1053, #ad5389)
+    iframe
+        max-width: 350px
+        display: inline-block
+        
