@@ -1,9 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `Jalapina`,
-    description: `My online sandbox`,
-    author: `jalapina`,
+    description: `My online sandbox: Music | Software | Memes | Good Vibes`,
+    author: {
+      name: `David Pina`,
+      summary: `Software engineer trying to change the world.`,
+    },
     siteUrl: `https://jalapina.com/`,
+    image: `src/images/space.png`,
+    social: {
+      twitter: `davidpina19`,
+    },
   },
   plugins: [
     "gatsby-plugin-sass",

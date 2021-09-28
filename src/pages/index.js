@@ -2,51 +2,33 @@ import React, {useState,useEffect} from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "../assets/index.sass"
-import McHammer from "../gifs/earth.gif"
+import Earth from "../gifs/earth.gif"
 import Alert from "../gifs/alert.gif"
 import PaperClip from "../images/paper-clip.png"
 import Seo from "../components/seo"
 import Image from "../components/image"
+import space from "../images/space.png"
 
 const IndexPage = () => {
 
   return(
     <div className="home">
     
-      <Seo title="Home" />
+      <Seo title="Home" image={space} />
 
       <div className="about-me">
 
         <div className="first-intro-part">
 
           <img
-            src={McHammer}
+            src={Earth}
             width={80}
             quality={95}
-            alt="MC Hammer"
+            alt="Earth"
+            className="bounce-in-bck"
             style={{ marginBottom: `1.45rem` }}
           />
-          {/* <img
-            src={McHammer}
-            width={80}
-            quality={95}
-            alt="MC Hammer"
-            style={{ marginBottom: `1.45rem` }}
-          />
-          <img
-            src={McHammer}
-            width={80}
-            quality={95}
-            alt="MC Hammer"
-            style={{ marginBottom: `1.45rem` }}
-          />
-          <img
-            src={McHammer}
-            width={80}
-            quality={95}
-            alt="MC Hammer"
-            style={{ marginBottom: `1.45rem` }}
-          /> */}
+
           
           <div className="text-wrapper">
             <h1 className="blink">
@@ -80,7 +62,7 @@ const IndexPage = () => {
               <StaticImage
                 src={"../images/hackerman.jpeg"}
                 quality={95}
-                alt="MC Hammer"
+                alt="Hackerman"
               />
             </div>
           </div>
@@ -90,7 +72,7 @@ const IndexPage = () => {
               <StaticImage
                 src={"../images/cursed-david.jpeg"}
                 quality={95}
-                alt="MC Hammer"
+                alt="Curesed David"
               />
             </div>
           </div>
@@ -99,38 +81,38 @@ const IndexPage = () => {
               <StaticImage
                 src={"../images/halloween-with-fam.jpg"}
                 quality={95}
-                alt="MC Hammer"
+                alt="Halloween"
               />
             </div>
           </div>
 
-            <div className="image-container">
-              <div className="inner-image">
-                <StaticImage
-                  src={"../images/me-green.jpeg"}
-                  quality={95}
-                  alt="MC Hammer"
-                />
-            </div>
+          <div className="image-container">
+            <div className="inner-image">
+              <StaticImage
+                src={"../images/me-green.jpeg"}
+                quality={95}
+                alt="MC Hammer"
+              />
           </div>
-            <div className="image-container">
-              <div className="inner-image">
-                <StaticImage
-                  src={"../images/peace-on-earth.jpeg"}
-                  quality={95}
-                  alt="MC Hammer"
-                />
-            </div>
+        </div>
+          <div className="image-container">
+            <div className="inner-image">
+              <StaticImage
+                src={"../images/peace-on-earth.jpeg"}
+                quality={95}
+                alt="MC Hammer"
+              />
           </div>
-            <div className="image-container">
-              <div className="inner-image">
-                <StaticImage
-                  src={"../images/bob.jpg"}
-                  quality={95}
-                  alt="MC Hammer"
-                />
-            </div>
+        </div>
+          <div className="image-container">
+            <div className="inner-image">
+              <StaticImage
+                src={"../images/bob.jpg"}
+                quality={95}
+                alt="MC Hammer"
+              />
           </div>
+        </div>
 
         </div>
       </div>
@@ -154,7 +136,7 @@ const IndexPage = () => {
 
       <div className="my-spotify">
         <h1>My current Obsession</h1>
-        <iframe src="https://open.spotify.com/embed/track/0lPqlYOhIwbQS0W1mllUlN" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/playlist/5AQeDrc3tqD2GCg59HBcji" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
 
       <div className="chooseYourFighter">
@@ -164,48 +146,53 @@ const IndexPage = () => {
         <div className="fighters">
           <Link to="/fighters/dev">
             <h1>
-              The Dev
-            </h1>
-          </Link>
-        </div>
-        <div className="fighters">
-          <Link to="/fighters/photographer">
-            <h1>
-              The Photographer
+              Dev
             </h1>
           </Link>
         </div>
         <div className="fighters new">
-          <Link to="/fighters/farmer">
+          <Link to="/fighters/photographer">
             <h1>
-              The Farmer
+              My Picture's and such
             </h1>
           </Link>
         </div>
+        {/* <div className="fighters new">
+          <Link to="/fighters/farmer">
+            <h1>
+              Farmer
+            </h1>
+          </Link>
+        </div> */}
         <div className="fighters">
           <Link to="/fighters/musician">
             <h1>
-              The Musician
+              My Music
             </h1>
           </Link>
         </div>
-        <div className="fighters">
+        {/* <div className="fighters">
           <Link to="/fighters/cook">
             <h1>
               The Cook
             </h1>
           </Link>
-        </div>
+        </div> */}
         <div className="fighters new">
           <Link to="/fighters/shitposter">
             <h1>
-              The Shitposter
+              Meme Market
             </h1>
           </Link>
         </div>
       </div>
       
       <div className="the-wall">
+        <StaticImage
+                  src={"../images/under.png"}
+                  quality={95}
+                  alt="Under Construction"
+                />
         <h2>Leave a message!</h2>
         <from>
           <input type="name" name="name" placeholder="name" required/>

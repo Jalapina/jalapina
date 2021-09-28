@@ -1,32 +1,41 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+//SEO file from https://github.com/helloworldless/davidagood.com/blob/master/src/components/seo.js
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { graphql, useStaticQuery } from "gatsby";
+import { constructUrl } from "../utils/urlUtil";
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+const SEO = ({ description, lang, meta, title, imageUrl, imageAlt }) => {
+  const data = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
             description
-            author
+            social {
+              twitter
+            }
+            siteUrl
+          }
+        }
+        ogImageDefault: file(relativePath: {eq: "space.png"}) {
+          childImageSharp {
+            # These are the dimensions of the default file: content/assets/space.png
+            fixed(height: 260, width: 260) {
+              src
+            }
           }
         }
       }
-    `
-  )
+    `,
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const { siteMetadata } = data.site;
+  const metaDescription = description || siteMetadata.description;
+  const defaultImageUrl = constructUrl(siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.fixed?.src)
+  const ogImageUrl = imageUrl || defaultImageUrl;
 
   return (
     <Helmet
@@ -34,7 +43,7 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -53,37 +62,44 @@ function Seo({ description, lang, meta, title }) {
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: "og:image",
+          content: ogImageUrl,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          property: "twitter:image",
+          content: ogImageUrl          
         },
         {
-          name: `twitter:title`,
-          content: title,
+          property: `twitter:card`,
+          // If image prop is passed use the larger card; Otherwise the default
+          // og image is just a little icon so use the smaller card
+          // More about cards here: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
+          content: imageUrl ? `summary_large_image` : `summary`,
         },
         {
-          name: `twitter:description`,
-          content: metaDescription,
+          property: `twitter:creator`,
+          content: siteMetadata.social.twitter,
+        },
+        {
+          property: "twitter:image:alt",
+          content: imageAlt || "Jalapina logo",
         },
       ].concat(meta)}
     />
-  )
-}
+  );
+};
 
-Seo.defaultProps = {
+SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
-Seo.propTypes = {
+SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default Seo
+export default SEO;
