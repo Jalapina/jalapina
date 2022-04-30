@@ -8,8 +8,16 @@ import PaperClip from "../images/paper-clip.png"
 import Seo from "../components/seo"
 import Image from "../components/image"
 import space from "../images/space.png"
+import stopIt from "../images/stopIt.gif"
 
 const IndexPage = () => {
+
+  const [click, setClick] = useState(false)
+
+  const handleClick = () => {
+    setClick(!click);
+    console.log(click)
+  }
 
   return(
     <div className="home">
@@ -48,7 +56,7 @@ const IndexPage = () => {
               <font style={{color:`#ff863e`}}>!</font>
             </h1>
 
-            <marquee className="sliding-text">Welcome to my website. I post everything here. Dank memes, music, my thoughts, and my master plan for world domination </marquee>
+            <marquee className="sliding-text">Welcome to my website.</marquee>
 
           </div>
 
@@ -121,14 +129,18 @@ const IndexPage = () => {
         <div className="alert">
           <img src={Alert} width={85}/>
           <h2 className="alert-title">Alert!</h2>
-          <p>Best check yo self, you're not looking too good.</p>
           <a href="https://www.youtube.com/watch?v=pBt1OHZ2m7o">Click this link for instant Happiness</a>
         </div>
         <div className="list-wall">
+          
+          <div className="get-some">
+            <img onClick={()=>{handleClick()}} style={click ? {display:"inline-block"} : { display:"none" }} src={stopIt}  />
+          </div>
+
           <ul>
             <li>Home</li>
             <li>My Projects</li>
-            <li>help</li>
+            <li onClick={()=>{handleClick()}}>help</li>
             <li>Blog</li>
           </ul>
         </div>
@@ -141,58 +153,53 @@ const IndexPage = () => {
 
       <div className="chooseYourFighter">
         <h2>
-          Choose Your Fighter!
+          My personalities
         </h2>
         <div className="fighters">
           <Link to="/fighters/dev">
-            <h1>
-              Dev
-            </h1>
+            <p>
+              Developer
+            </p>
           </Link>
         </div>
-        <div className="fighters new">
+        <div className="fighters">
           <Link to="/fighters/photographer">
-            <h1>
-              My Picture's and such
-            </h1>
+            <p>
+              My Picture
+            </p>
           </Link>
         </div>
         {/* <div className="fighters new">
           <Link to="/fighters/farmer">
-            <h1>
+            <p>
               Farmer
-            </h1>
+            </p>
           </Link>
         </div> */}
         <div className="fighters">
           <Link to="/fighters/musician">
-            <h1>
+            <p>
               My Music
-            </h1>
+            </p>
           </Link>
         </div>
         {/* <div className="fighters">
           <Link to="/fighters/cook">
-            <h1>
+            <p>
               The Cook
-            </h1>
+            </p>
           </Link>
         </div> */}
-        <div className="fighters new">
-          <Link to="/fighters/shitposter">
-            <h1>
-              Meme Market
-            </h1>
+        <div className="fighters">
+          <Link to="/fighters/thoughts">
+            <p>
+              Thoughts
+            </p>
           </Link>
         </div>
       </div>
       
       <div className="the-wall">
-        <StaticImage
-                  src={"../images/under.png"}
-                  quality={95}
-                  alt="Under Construction"
-                />
         <h2>Leave a message!</h2>
         <from>
           <input type="name" name="name" placeholder="name" required/>

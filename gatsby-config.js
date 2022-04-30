@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Jalapina`,
+    title: `Piña`,
     description: `My online sandbox: Music | Software | Memes | Good Vibes`,
     author: {
       name: `David Pina`,

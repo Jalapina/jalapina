@@ -13,7 +13,7 @@ const Dev = () => (
         Join me in my neverending journey in the world of programming.
       </p>
       <p>
-        Currently learning how to make NFT's, I swear I'm going to start a blog. I swear.
+        Currently learning how to make NFT's on Ethereum, Solana and Kadena.
       </p>
 
       <div className="other-website">
@@ -27,6 +27,23 @@ const Dev = () => (
 
     </div>
 
+    <div className="youtube-videos">
+      <h3>
+        Ethereum
+      </h3>
+      <div className="youtube-v-container">
+        <iframe width="500" height="315" src="https://www.youtube.com/embed/Lom-EMfQL8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div className="youtube-v-container">
+        <iframe width="500" height="315" src="https://www.youtube.com/embed/GHtsf9EyGdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>
+        Solana
+      </h3>
+      <div className="youtube-v-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LhAE7Ii2kbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
 )
 
