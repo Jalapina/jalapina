@@ -21,6 +21,16 @@ const Thoughts = () => {
           <p>Is Ethereum really decentralized?</p>
         </div>
         
+        <div className="note-icon">
+          <Image style={`width:150px`} filename="document" />
+          <p>Communication is the key to success.</p>
+        </div>
+
+        <div className="note-icon">
+          <Image style={`width:150px`} filename="document" />
+          <p></p>
+        </div>
+        
       </div>
 
     </div>

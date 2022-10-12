@@ -56,7 +56,7 @@ const IndexPage = () => {
               <font style={{color:`#ff863e`}}>!</font>
             </h1>
 
-            <marquee className="sliding-text">Welcome to my website.</marquee>
+            {/* <marquee className="sliding-text">Welcome to my website.</marquee> */}
 
           </div>
 
@@ -125,47 +125,24 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <div className="other-info-wrapper">
-        <div className="alert">
-          <img src={Alert} width={85}/>
-          <h2 className="alert-title">Alert!</h2>
-          <a href="https://www.youtube.com/watch?v=pBt1OHZ2m7o">Click this link for instant Happiness</a>
-        </div>
-        <div className="list-wall">
-          
-          <div className="get-some">
-            <img onClick={()=>{handleClick()}} style={click ? {display:"inline-block"} : { display:"none" }} src={stopIt}  />
-          </div>
-
-          <ul>
-            <li>Home</li>
-            <li>My Projects</li>
-            <li onClick={()=>{handleClick()}}>help</li>
-            <li>Blog</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="my-spotify">
+      {/* <div className="my-spotify">
         <h1>My current Obsession</h1>
         <iframe src="https://open.spotify.com/embed/playlist/5AQeDrc3tqD2GCg59HBcji" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      </div>
+      </div> */}
 
       <div className="chooseYourFighter">
-        <h2>
-          My personalities
-        </h2>
+
         <div className="fighters">
           <Link to="/fighters/dev">
             <p>
-              Developer
+              Projects
             </p>
           </Link>
         </div>
         <div className="fighters">
           <Link to="/fighters/photographer">
             <p>
-              My Picture
+              Fotos
             </p>
           </Link>
         </div>
@@ -179,7 +156,7 @@ const IndexPage = () => {
         <div className="fighters">
           <Link to="/fighters/musician">
             <p>
-              My Music
+              Music
             </p>
           </Link>
         </div>
